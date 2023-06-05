@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+    <title>Budega</title>
+</head>
+
+<body>
+    <header>
+        <div>
+            <h1>Budega</h1>
+        </div>
+        <ul class="list" id="menu" onclick="exitMenu()">
+            <li><a href="./login/login.html">Administração</a></li>
+            <li><a href="#box-parallax">Apresentação</a></li>
+            <li><a href="https://wa.me/5582987247803?text=Ol%C3%A1%21+Vim+pelo+Budega...+%E2%9D%A4%EF%B8%8F">Fale Conosco</a></li>
+        </ul>
+        <i id="iconMenu" class="bi bi-three-dots-vertical" onclick="openMenu()"></i>
+    </header>
+    <main>
+        <article id="apresenta">
+            <div id="bgimg"></div>
+            <h2>Olá! Seja bem vindo ao nosso site</h2>
+            <p>Ao nosso mundo de sabores! No nosso site de bebidas, você encontrará uma seleção incrível de opções refrescantes e deliciosas para todos os gostos</p>
+        </article>
+        <section id="ranking">
+            <article>
+                <h2>Ranking</h2>
+                <p>Somos a melhor empresa em sistema de bebidas da região Nordeste nomeado pela República Portuguesa</p>
+            </article>
+            <div>
+                <img src="https://img.freepik.com/vetores-gratis/ilustracao-plana-de-cangaceiro_23-2149982464.jpg?t=st=1685704164~exp=1685704764~hmac=4f9c29065705c53de75e451092e8cdbbb41332835628fe22f2be4ae1942127b7"
+                    alt="">
+                <p>By Alagoas</p>
+            </div>
+        </section>
+        <div id="content">
+            <div id="box-slide">
+                <input type="radio" name="radio" id="slide1">
+                <input type="radio" name="radio" id="slide2">
+                <input type="radio" name="radio" id="slide3" checked>
+                <input type="radio" name="radio" id="slide4">
+                <input type="radio" name="radio" id="slide5">
+
+                <div class="slide s1">
+                    <img src="https://img.freepik.com/fotos-gratis/garrafas-de-vidro-de-cerveja-com-vidro-e-gelo-no-fundo-escuro_1150-8899.jpg?w=826&t=st=1685654089~exp=1685654689~hmac=36b41bd9c5548f01dcadc51d410b6a0142870d76eff25713d5597cd70eb662e7"
+                        alt="slide 1">
+                </div>
+                <div class="slide ">
+                    <img src="https://img.freepik.com/fotos-gratis/amigos-felizes-de-tiro-medio-com-canecas-de-cerveja_23-2148872451.jpg?w=740&t=st=1685654584~exp=1685655184~hmac=55e7a02e65d76cec3de69546d5ec780732d2e26ee8a2ab3369b9ba477e9ba973"
+                        alt="slide 2">
+                </div>
+                <div class="slide ">
+                    <img src="https://img.freepik.com/fotos-gratis/frente-saborosa-variedade-de-cervejas-americanas_23-2148907593.jpg?w=740&t=st=1685655105~exp=1685655705~hmac=c26e503ceea1b9b748af4a6c9b665090b6690f656944467bd13a206cb3957019"
+                        alt="slide 3">
+                </div>
+                <div class="slide ">
+                    <img src="https://img.freepik.com/fotos-gratis/barman-bonito-fazendo-beber-e-cocktails-num-balcao_1303-19783.jpg?w=740&t=st=1685655156~exp=1685655756~hmac=69d60c28262db8e59861e42e5b964575ec277d951a01a6cffc6b8d2d9bbb647f"
+                        alt="slide 4">
+                </div>
+                <div class="slide ">
+                    <img src="https://img.freepik.com/fotos-gratis/garrafas-de-vidro-de-cerveja-com-vidro-e-gelo-no-fundo-escuro_1150-8906.jpg?w=740&t=st=1685655177~exp=1685655777~hmac=674c6261ed00ac3114b6846a3661f3c5f237a4fa81d6f571de4748908a7cbcd6"
+                        alt="slide 5">
+                </div>
+                
+            </div>
+            <div id="navigation">
+                <label for="slide1" class="label c1"></label>
+                <label for="slide2" class="label"></label>
+                <label for="slide3" class="label"></label>
+                <label for="slide4" class="label"></label>
+                <label for="slide5" class="label"></label>
+            </div>
+        </div>
+        <section>
+
+        </section>
+        <section id="box-service">
+            <article>
+                
+                <h2>Serviços</h2>
+                <ul>
+                    <li>Drinks e Coquitéis</li>
+                    <li>Bebidas em varejo</li>
+                    <li>Entrega</li>
+                </ul>
+                <p><a href="https://wa.me/5582987247803?text=Ol%C3%A1%21+Vim+pelo+Budega...+%E2%9D%A4%EF%B8%8F">Fale Conosco</a></p>
+            </article>
+            <div>
+                <img id="img-auto" src="https://img.freepik.com/free-photo/foamy-beer-gold-pint-glass-generative-ai_188544-12316.jpg?w=740&t=st=1685714660~exp=1685715260~hmac=8a981c18febee210bfb3e006a738920c4810155f78af184d39abab221d6078b9" alt="Fotos serviços">
+            </div>
+
+        </section>
+    </main>
+    <footer>
+        <div id="box-parallax"></div>
+        <h2>Desenvolvedor <a href="https://instagram.com/deivisonjohnny"><strong>Deivison Johnny</strong></a></h2>
+
+        <article>
+            <p>Esse site foi desenvolvido por <a href=""><strong>Deivison Johnny</strong></a> com o intuito de agregar meu portfólio</p>
+        </article>
+        <ul>
+            <li><a href="https://github.com/DeivisonJohnny?tab=repositories"><i class="bi bi-github"></i>
+            </a></li>
+            <li><a href="https://wa.me/5582987247803?text=Ol%C3%A1%21+Vim+pelo+Budega...+%E2%9D%A4%EF%B8%8F"><i class="bi bi-whatsapp"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/deivisonjohnny/"><i class="bi bi-linkedin"></i></a></li>
+            <li><a href="https://www.instagram.com/deivisonjohnny/"><i class="bi bi-instagram"></i></a></li>
+        </ul>
+    </footer>
+</body>
+</html>

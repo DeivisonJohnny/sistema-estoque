@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+    <script src="../js/login.js" defer></script>
+    <title>Administração</title>
+</head>
+
+<body>
+    <main>
+        <section id="section-primary">
+            <div id="section-bg"></div>
+            <article>
+                <h1><a href="/">Budega</a></h1>
+                <p id="elementAnimation">Olá administrador, vamos começar a gerenciar se controle de estoque...</p>
+            </article>
+        </section>
+        <section id="section-form">
+
+            <form action="test-page.html" method="post">
+                <input type="hidden" name="acao" value="logar">
+                <div id="top-band">
+
+                </div>
+                <h2>Acesse</h2>
+                <div>
+                    <label for="usuario">Usuário</label>
+                    <input type="text" name="usuario" id="usuario" placeholder="Usuario" oninput="validUsu()">
+                    <span class="required" for="usuario">O usuário deve ter ao menos 3 caracteres</span>
+                </div>
+
+                <div>
+                    <label for="senha">Senha</label>
+                    <div id="box-pass">
+                        <input type="password" name="senha" id="senha" placeholder="Senha" oninput="validPass()">
+                        <i class="bi bi-eye" onclick="mostrarPass()"></i>
+                    </div>
+                    <span class="required" for="usuario">A senha deve ao menos 8 caracteres</span>
+                </div>
+                <div>
+                    <input type="submit" value="Entrar">
+                </div>
+                <div id="lines">
+                    <ul>
+                        <li class="line"></li>
+                        <li>ou</li>
+                        <li class="line"></li>
+                    </ul>
+                </div>
+
+                <nav>
+                    <p>Gostaria de ter acesso á administração? <a href="https://wa.me/5582987247803">Fale conosco</a>
+                    </p>
+                </nav>
+
+                <div id="box-social">
+                    <h2><a href="">Dev Johnny</a></h2>
+                    <ul>
+                        <li><a href="https://github.com/DeivisonJohnny?tab=repositories"><i class="bi bi-github"></i>
+                            </a></li>
+                        <li><a
+                                href="https://wa.me/5582987247803?text=Ol%C3%A1+vim+pelo+site+Budega..."><i
+                                    class="bi bi-whatsapp"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/deivisonjohnny/"><i class="bi bi-linkedin"></i></a>
+                        </li>
+                        <li><a href="https://www.instagram.com/deivisonjohnny/"><i class="bi bi-instagram"></i></a></li>
+                    </ul>
+                </div>
+
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>
