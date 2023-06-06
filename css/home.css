@@ -90,6 +90,10 @@ menu > div > ul > li > i {
     transition: 0.5s;
 }
 
+.bi-gear:hover::before {
+    content: '\F3E2';
+}
+
 .bi-house-door:hover::before {
     content: '\F422';
 }
