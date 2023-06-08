@@ -13,13 +13,17 @@
     --font-primary: 'Geologica', sans-serif;
 }
 
-#box-radius > ul {
+#box-radius {
+    width: 100%;
+}
+
+#box-radius>ul {
     list-style: none;
     margin-top: 10px;
     margin-left: 10px;
 }
 
-#box-radius > ul > li {
+#box-radius>ul>li {
     border-radius: 50%;
     width: 13px;
     height: 13px;
@@ -37,24 +41,30 @@
     background-color: green;
 }
 
-#box-radius > ul {
+#box-radius>ul {
     display: flex;
     align-items: center;
     gap: 10px;
 
 }
 
+body {
+    position: absolute;
+    background-color: #1e1e1e;
+
+}
+
 main {
     position: absolute;
+    width: 90vw;
+    height: 90vh;
     padding: 10px;
-    top: 0px;
-    left: 0px;
-    width: 90%;
-    height: 90%;
-    margin-top: 59px;
-    margin-left: 58px;
     border-radius: 10px;
     background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     overflow: hidden;
 }
 
@@ -70,32 +80,35 @@ form {
     border-radius: 10px;
 }
 
-form > section {
+form>section {
     width: 100%;
     display: flex;
     justify-content: center;
     gap: 10px;
 }
 
-form > section > div {
+form>section>div {
     width: 70%;
     display: flex;
     flex-direction: column;
     gap: 2px;
 }
+
 .label-required::before {
     content: '* ';
     color: rgb(255, 38, 0);
 }
 
-form input, textarea {
+form input,
+textarea {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid gray;
     outline: none;
-} 
+}
 
-form input:focus, textarea:focus {
+form input:focus,
+textarea:focus {
     border-color: #aa5e00;
     box-shadow: 0px 0px 10px -2px #EC8D19;
 }
@@ -109,13 +122,13 @@ span {
 }
 
 
-#box-select > div {
+#box-select>div {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-#box-select > div > button {
+#box-select>div>p {
     background-color: #EC8D19;
     border: none;
     border-radius: 5px;
@@ -124,7 +137,7 @@ span {
     cursor: pointer;
 }
 
-#box-select > div > button:hover {
+#box-select>div>p:hover {
     background-color: black;
     color: #EC8D19;
 }
@@ -142,7 +155,7 @@ select {
     justify-content: center;
 }
 
-input[type="submit"] {
+form>div>input[type="submit"] {
     width: 100%;
     background-color: #EC8D19;
     font-weight: bold;
@@ -153,7 +166,7 @@ input[type="submit"] {
     box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.279);
 }
 
-input[type="submit"]:hover {
+form>div>input[type="submit"]:hover {
     background-color: black;
     color: #EC8D19;
 }
@@ -168,5 +181,108 @@ input[type="submit"]:hover {
     box-shadow: 0px -2px 15px -1px rgba(0, 0, 0, 0.881);
 }
 
+@keyframes nvcate {
+    0% {
+        width: 0vw;
+        height: 0vh;
+        border-radius: 50%;
+        opacity: 10%;
+    }
+
+    100% {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0%;
+        opacity: 100%;
+    }
+}
+
+@keyframes exitMenu {
+    0% {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+
+    }
+
+    30% {
+        opacity: 100%;
+    }
+
+    100% {
+        width: 0vw;
+        height: 0vh;
+        opacity: 0%;
+        border-radius: 50%;
+        display: none;
+    }
+}
+
+.cate {
+    display: none;
+}
+
+.newCate {
+    /* animation-name: nvcate; */
+    animation-duration: 0.8s;
+    animation-timing-function: ease-out;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    height: 100vh;
+    width: 100vw;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.668);
+    z-index: 1;
+    opacity: 100%;
+}
 
 
+
+.cate>form {
+    z-index: 2;
+    width: 350px;
+    height: 200px;
+    background-color: #1e1e1e;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.cate>form>div>div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cate>form>div>label {
+    color: #EC8D19;
+    font-size: 14px;
+    padding-left: 3px;
+}
+
+.cate>form>div>div>input {
+    width: 87%;
+}
+
+.cate>form>div>div>button {
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(0, 145, 255);
+    cursor: pointer;
+}
+
+.cate>form>div>div>button:hover {
+    background-color: rgb(72, 176, 255);
+}
+
+.cate>form>div>div>button>i {
+    font-size: 28px;
+}
+
+
+.cate>form>div {
+    width: 100%;
+}

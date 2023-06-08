@@ -19,7 +19,7 @@
             <img src="https://avatars.githubusercontent.com/u/107324024?v=4" alt="Aqui vai a foto do usuario">
             <p>Deivison Johnny</p>
         </div>
-        
+
     </header>
 
     <menu>
@@ -28,7 +28,7 @@
         </div>
         <div>
             <ul>
-                
+
                 <li><a href="./index.php?page=home"><i class="bi bi-house-door" title="Inicio"></i></a></li>
                 <li><a href=""><i class="bi bi-card-list" title="Listar, atualizar, deletar estoque"></i></a></li>
                 <li><a href="./index.php?page=novo-estoque"><i class="bi bi-plus-circle" title="Adicionar estoque"></i></a></li>
@@ -46,22 +46,23 @@
             </ul>
         </div>
     </menu>
-        <?php 
-            switch(@$_GET['page']) {
-                case 'home':
-                    require_once('../home/dashboard.php');
-                        break;
-                case 'novo-estoque';
-                    require_once('../manager/index.php');
-                        break;
-                
-                default:
-                    require_once('../home/dashboard.php');
-            }
+    <div id="main">
+
+        <?php
+        switch (@$_GET['page']) {
+            case 'home':
+                require_once('../home/dashboard.php');
+                break;
+            case 'novo-estoque';
+                require_once('../manager/index.html');
+                break;
+
+            default:
+                require_once('../home/dashboard.php');
+        }
         ?>
+    </div>
+
 </body>
 
 </html>
-
-
-
