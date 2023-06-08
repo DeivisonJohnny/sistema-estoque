@@ -1,48 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <script src="../js/home.js" defer></script>
-    <link rel="stylesheet" href="../css/home.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
 </head>
-
 <body>
-    <header>
-        <h2 title="Desenvolvedor">Dev Johnny</h2>
-
-        <div>
-            <img src="https://avatars.githubusercontent.com/u/107324024?v=4" alt="Aqui vai a foto do usuario">
-            <p>Deivison Johnny</p>
-        </div>
-        
-    </header>
-
-    <menu>
-        <div>
-            <h1>DJ</h1>
-        </div>
-        <div>
-            <ul>
-                
-                <li><i class="bi bi-house-door" title="Inicio"></i></li>
-                <li><i class="bi bi-card-list" title="Listar, atualizar, deletar estoque"></i></li>
-                <li><i class="bi bi-plus-circle" title="Adicionar estoque"></i></li>
-            </ul>
-        </div>
-        <div>
-            <ul>
-                <li><i class="bi bi-gear" title="Configuração"></i></li>
-                <li><i class="bi bi-question-circle" title="Ajuda"></i></li>
-                <li><i class="bi bi-box-arrow-left" title="Sair"></i></li>
-            </ul>
-        </div>
-    </menu>
-
+    
     <main>
         <div id="box-primary-main">
             <section id="count-estoque">
@@ -234,5 +196,4 @@
         </div>
     </main>
 </body>
-
 </html>
