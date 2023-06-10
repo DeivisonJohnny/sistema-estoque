@@ -23,13 +23,14 @@
             <section>
                 <div>
                     <label class="label-required" for="marca">Marca</label>
-                    <input type="text" name="item" id="marca" placeholder="Exemple: Old Parr">
+                    <input class="inputs" type="text" name="item" id="marca" placeholder="Exemple: Old Parr">
                     <span>* Esse campo é obrigatório</span>
                 </div>
                 <div id="box-select">
                     <label class="label-required" for="categoria">Catégoria</label>
                     <div>
                         <select name="categoria" id="categoria">
+                            <option value="">Selecione uma catégoria</option>
                             <option value="Whisky">Whisky</option>
                             <option value="Cerveja">Cerveja</option>
                             <option value="Licor">Licor</option>
@@ -40,7 +41,6 @@
                             <i class="bi bi-plus"></i>
                             </p>
                     </div>
-                    <span>* Esse campo é obrigatório</span>
 
                 </div>
             </section>
@@ -51,19 +51,19 @@
                 </div>
                 <div>
                     <label class="label-required" for="unidades">Quantas unidades</label>
-                    <input type="number" name="unidades" id="unidades">
+                    <input class="inputs" type="number" name="unidades" id="unidades">
                     <span>* Esse campo é obrigatório</span>
                 </div>
             </section>
             <section>
                 <div>
                     <label class="label-required" for="brutoVL">Valor bruto da unidade</label>
-                    <input type="number" name="brutoVL" id="brutoVL">
+                    <input class="inputs" type="number" name="brutoVL" id="brutoVL">
                     <span>* Esse campo é obrigatório</span>
                 </div>
                 <div>
                     <label class="label-required" for="valorUN">Valor final da unidade:</label>
-                    <input type="number" name="valorUN" id="valorUN">
+                    <input class="inputs" type="number" name="valorUN" id="valorUN">
                     <span>* Esse campo é obrigatório</span>
 
                 </div>
@@ -76,8 +76,9 @@
         <div id="bottom-band">
 
         </div>
-        <div class="cate" onclick="exitMenu()">
+        <div class="cate" >
             <form id="form-cate" action="../auth/auth.php?test" method="post">
+                <i class="bi bi-x" onclick="exitMenu()"></i>
                 <input type="hidden" name="acao" value="nova-categoria">
                 <h2>Nova categoria</h2>
                 <div>

@@ -224,7 +224,7 @@ form>div>input[type="submit"]:hover {
 
 .newCate {
     /* animation-name: nvcate; */
-    animation-duration: 0.8s;
+    animation-duration: 0.5s;
     animation-timing-function: ease-out;
     position: absolute;
     display: flex;
@@ -242,6 +242,7 @@ form>div>input[type="submit"]:hover {
 
 
 .cate>form {
+    position: relative;
     z-index: 2;
     width: 350px;
     height: 200px;
@@ -285,4 +286,21 @@ form>div>input[type="submit"]:hover {
 
 .cate>form>div {
     width: 100%;
+}
+
+.bi-x {
+    font-size: 30px;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+    padding: 0px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+}
+
+.bi-x:hover {
+    border: 1px solid gray;
+
 }
