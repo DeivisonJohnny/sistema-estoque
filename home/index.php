@@ -54,7 +54,7 @@
                 require_once('../home/dashboard.php');
                 break;
             case 'novo-estoque';
-                require_once('../manager/index.html');
+                require_once('../manager/index.php');
                 break;
 
             default:

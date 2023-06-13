@@ -1,4 +1,8 @@
 const newCate = document.querySelectorAll('.cate')
+const form = document.getElementsByTagName(form)
+
+form.style.backgroundColor = 'black'
+console.log(form)
 
 function newCategoria() {
     if (newCate[0].className != 'newCate') {

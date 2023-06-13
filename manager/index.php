@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <script src="../js/manager.js" defer></script>
@@ -27,10 +27,10 @@
                     <span>* Esse campo é obrigatório</span>
                 </div>
                 <div id="box-select">
-                    <label class="label-required" for="categoria">Catégoria</label>
+                    <label class="label-required" for="categoria">Categoria</label>
                     <div>
                         <select name="categoria" id="categoria">
-                            <option value="">Selecione uma catégoria</option>
+                            <option value="">Selecione uma categoria</option>
                             <option value="Whisky">Whisky</option>
                             <option value="Cerveja">Cerveja</option>
                             <option value="Licor">Licor</option>
@@ -69,7 +69,7 @@
                 </div>
             </section>
             <div id="box-submit">
-                <input type="submit" value="Adicionar">
+                <input  type="submit" value="Adicionar">
             </div>
         </form>
 
