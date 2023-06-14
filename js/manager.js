@@ -1,8 +1,6 @@
 const newCate = document.querySelectorAll('.cate')
-const form = document.getElementsByTagName(form)
+const form = document.querySelectorAll('form')[0]
 
-form.style.backgroundColor = 'black'
-console.log(form)
 
 function newCategoria() {
     if (newCate[0].className != 'newCate') {
@@ -52,12 +50,15 @@ function validInp(index) {
             
         }
     }
+
 }
 
 for (let i = 0; i < inputs.length; i++) {
     inputs[i].addEventListener('blur', validInp(i))
     inputs[i].addEventListener('input', validInp(i))
-    console.log(inputs.length)
 }
 
-
+form.addEventListener('submit', (event) => {
+    event.preventDefault()
+    setError(indice)
+})
