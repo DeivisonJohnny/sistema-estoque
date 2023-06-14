@@ -17,13 +17,13 @@
                 <li id="green"></li>
             </ul>
         </div>
-        <form action="../auth/autenticacao" method="post" id="formMain">
+        <form action="../auth/auth-estoque.php" method="post" id="formMain">
             <h1>Adicionar produto ao estoque</h1>
-            <input type="hidden" name="acao" value="adicionar-estoque">
+            <input type="hidden" name="acao" value="add-stock">
             <section>
                 <div>
                     <label class="label-required" for="marca">Marca</label>
-                    <input class="inputs" type="text" name="item" id="marca" placeholder="Exemple: Old Parr">
+                    <input class="inputs" type="text" name="marca" id="marca" placeholder="Exemple: Old Parr">
                     <span>* Esse campo é obrigatório</span>
                 </div>
                 <div id="box-select">
@@ -31,11 +31,22 @@
                     <div>
                         <select name="categoria" id="categoria">
                             <option value="">Selecione uma categoria</option>
-                            <option value="Whisky">Whisky</option>
-                            <option value="Cerveja">Cerveja</option>
-                            <option value="Licor">Licor</option>
-                            <option value="Gin">Gin</option>
-                            <option value="Vinho">Vinho</option>
+                            <?php 
+                                include_once("../connection/estoque.php");
+
+                                $sqlListCate = mysqli_query($connetion_stock, "SELECT * FROM categorias");
+                                print_r($sqlListCate);
+
+                                if (mysqli_num_rows($sqlListCate) > 0) {
+                                    while($listCate = mysqli_fetch_assoc($sqlListCate)){
+                                        echo "<option value=".$listCate['Categoria'].">".$listCate['Categoria']."</option>";
+                                    }
+                                } else {
+                                    # code...
+                                }
+                                
+
+                            ?>
                         </select>
                         <p id="addCategoria" onclick="newCategoria()">
                             <i class="bi bi-plus"></i>
@@ -58,12 +69,12 @@
             <section>
                 <div>
                     <label class="label-required" for="brutoVL">Valor bruto da unidade</label>
-                    <input class="inputs" type="number" name="brutoVL" id="brutoVL">
+                    <input class="inputs" type="number" step="0.01" name="brutoVL" id="brutoVL">
                     <span>* Esse campo é obrigatório</span>
                 </div>
                 <div>
                     <label class="label-required" for="valorUN">Valor final da unidade:</label>
-                    <input class="inputs" type="number" name="valorUN" id="valorUN">
+                    <input class="inputs" type="number" step="0.01" name="valorUN" id="valorUN">
                     <span>* Esse campo é obrigatório</span>
 
                 </div>
@@ -77,15 +88,15 @@
 
         </div>
         <div class="cate" >
-            <form id="form-cate" action="../auth/auth.php?test" method="post">
+            <form id="form-cate" action="../auth/auth-estoque.php" method="post">
                 <i class="bi bi-x" onclick="exitMenu()"></i>
-                <input type="hidden" name="acao" value="nova-categoria">
+                <input type="hidden" name="acao" value="new-category">
                 <h2>Nova categoria</h2>
                 <div>
                     <label for="nvcate">Nome da categoria</label>
                     <div>
 
-                        <input type="text" name="nvcate" id="nvcate">
+                        <input type="text" name="new-cate" id="nvcate">
                         <button type="submit" title="Adicionar categoria"><i class="bi bi-plus"></i></button>
                     </div>
                 </div>

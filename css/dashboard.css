@@ -1,21 +1,22 @@
-
 main {
     position: absolute;
     top: 0px;
     left: 0px;
-    padding-left: 44px;
     padding-top: 47px;
+    padding-left: 44px;
+
     width: 100vw;
     height: 100vh;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 20px;
     z-index: 1;
 }
 
-main > div {
+main>div {
     width: 95%;
     height: 45%;
     display: flex;
@@ -23,17 +24,19 @@ main > div {
     justify-content: space-between;
     padding: 0px 20px;
 }
-main > #box-primary-main {
+
+main>#box-primary-main {
     display: flex;
     gap: 20px;
+    /* flex-wrap: wrap; */
 }
 
-main > #box-primary-main > section{
+main>#box-primary-main>section {
     width: 50%;
     height: 100%;
     display: flex;
     align-items: center;
-    box-shadow: 2px 2px 15px -3px rgba(0, 0, 0, 0.66);   
+    box-shadow: 2px 2px 15px -3px rgba(0, 0, 0, 0.66);
     border-radius: 10px;
     border-right: 7.5px solid black;
     transition: 0.4s;
@@ -41,18 +44,18 @@ main > #box-primary-main > section{
     background-color: #FA961B;
 }
 
-main > #box-primary-main > section:hover {
+main>#box-primary-main>section:hover {
     width: 52%;
     height: 102%;
 }
 
-main > #box-primary-main > section > nav {
+main>#box-primary-main>section>nav {
     gap: 5%;
     height: 100%;
     width: 100%;
 }
 
-#count-list >  nav{
+#count-list>nav {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -60,7 +63,7 @@ main > #box-primary-main > section > nav {
     position: relative;
 }
 
-#count-estoque > nav {
+#count-estoque>nav {
     width: 95%;
     height: 98%;
     display: flex;
@@ -68,26 +71,26 @@ main > #box-primary-main > section > nav {
     justify-content: space-around;
 }
 
-#count-estoque > nav > h2 {
+#count-estoque>nav>h2 {
     font-size: 2em;
 }
 
-#count-estoque > nav > span {
+#count-estoque>nav>span {
     font-size: 3em;
 }
 
-#count-estoque > nav > div {
+#count-estoque>nav>div {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-#count-estoque > nav > div > p {
+#count-estoque>nav>div>p {
     padding-left: 20px;
 }
 
-main > #box-primary-main > section > nav > ul {
+main>#box-primary-main>section>nav>ul {
     list-style: none;
     display: flex;
     align-items: center;
@@ -97,22 +100,23 @@ main > #box-primary-main > section > nav > ul {
 
 }
 
-#box-primary-main > section > nav > ul > li {
+#box-primary-main>section>nav>ul>li {
     flex-basis: 25%;
 }
 
-#box-secundary-main > section{
-    box-shadow: 2px 2px 15px -3px rgba(0, 0, 0, 0.588); 
+#box-secundary-main>section {
+    box-shadow: 2px 2px 15px -3px rgba(0, 0, 0, 0.588);
     border-radius: 10px;
     border-left: 2px solid black;
     border-right: 2px solid black;
     border-bottom: 2px solid black;
     width: 100%;
-    height: 100%;
+    max-height: 100%;
+    min-height: min-content;
     overflow: auto;
 }
 
-#box-secundary-main > section::-webkit-scrollbar{
+#box-secundary-main>section::-webkit-scrollbar {
     display: none;
 }
 
@@ -124,12 +128,13 @@ table {
 
 #radius1 {
     border-radius: 5px 0px 0px 0px;
-} 
+}
 
 #radius2 {
     border-radius: 0px 5px 0px 0px;
 
 }
+
 tbody {
     background-color: rgb(255, 216, 186);
 }
@@ -147,14 +152,16 @@ tr {
     transition: 0.3s;
     cursor: pointer;
 }
-tbody > tr {
+
+tbody>tr {
     border-bottom: 1px solid rgba(128, 128, 128, 0.348);
 }
+
 tr:nth-child(2n) {
     background-color: #fa961b3c;
 }
 
-tbody > tr:hover {
+tbody>tr:hover {
     background-color: #ff8c0077;
 }
 
@@ -175,3 +182,27 @@ th:hover {
     color: black;
 }
 
+@media screen and (max-width: 710px) {
+    main>#box-primary-main {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    main>#box-primary-main>section {
+        width: 100%;
+        height: 50%;
+    }
+
+    main>#box-primary-main>section:hover {
+        height: 100%;
+        width: 100%;
+    }
+
+    #box-secundary-main {
+        padding: 0;
+    }
+
+    #box-secundary-main > section {
+        max-height: fit-content;
+    }
+}

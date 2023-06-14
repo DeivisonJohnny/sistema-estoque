@@ -58,7 +58,3 @@ for (let i = 0; i < inputs.length; i++) {
     inputs[i].addEventListener('input', validInp(i))
 }
 
-form.addEventListener('submit', (event) => {
-    event.preventDefault()
-    setError(indice)
-})
