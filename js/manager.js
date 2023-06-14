@@ -1,5 +1,17 @@
 const newCate = document.querySelectorAll('.cate')
 const form = document.querySelectorAll('form')[0]
+const select = document.querySelector('#categoria')
+
+var option = select.option
+console.log(option);
+
+form.addEventListener('submit', (event) => {
+    if (select.value) {
+        
+    } else {
+        
+    }
+})
 
 
 function newCategoria() {

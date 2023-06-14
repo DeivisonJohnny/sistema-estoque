@@ -124,6 +124,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     border-radius: 10px;
+    transition: 0.3s;
 }
 
 #radius1 {
@@ -183,9 +184,18 @@ th:hover {
 }
 
 @media screen and (max-width: 710px) {
+    main {
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: max-content;
+        overflow-y: auto;
+    }
     main>#box-primary-main {
         flex-direction: column;
         padding: 0;
+        height: 50vh;
+        padding-top: 10px;
+
     }
 
     main>#box-primary-main>section {
@@ -200,9 +210,30 @@ th:hover {
 
     #box-secundary-main {
         padding: 0;
+        height: 100%;
     }
 
-    #box-secundary-main > section {
+    #box-secundary-main>section {
         max-height: fit-content;
+        height: 100%;
+
+    }
+}
+
+@media screen and (max-width: 608px) {
+    main {
+        padding-left: 35px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+}
+
+@media screen and (max-width: 410px) {
+    table {
+        table-layout: fixed;
+        font-size: 10px;
     }
 }

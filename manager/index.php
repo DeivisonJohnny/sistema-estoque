@@ -35,7 +35,6 @@
                                 include_once("../connection/estoque.php");
 
                                 $sqlListCate = mysqli_query($connetion_stock, "SELECT * FROM categorias");
-                                print_r($sqlListCate);
 
                                 if (mysqli_num_rows($sqlListCate) > 0) {
                                     while($listCate = mysqli_fetch_assoc($sqlListCate)){
