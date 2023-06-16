@@ -14,13 +14,22 @@
 <body>
     <header>
         <h2 title="Desenvolvedor">Dev Johnny</h2>
-
-        <div>
+        <div id="icon-user">
             <img src="https://avatars.githubusercontent.com/u/107324024?v=4" alt="Aqui vai a foto do usuario">
             <p>Deivison Johnny</p>
         </div>
+        <i class="bi bi-list"></i>
 
     </header>
+
+    <div class="menu">
+        <ul>
+            <li><a href="./index.php?page=home">Home</a></li>
+            <li><a href="">Lista</a></li>
+            <li><a href="./index.php?page=novo-estoque">Painel</a></li>
+            <li><a href="">Configuração</a></li>
+        </ul>
+    </div>
 
     <menu>
         <div>
@@ -46,6 +55,7 @@
             </ul>
         </div>
     </menu>
+
     <div id="main">
 
         <?php

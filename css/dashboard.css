@@ -6,7 +6,7 @@ main {
     padding-left: 44px;
 
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -220,11 +220,23 @@ th:hover {
     }
 }
 
-@media screen and (max-width: 608px) {
+@media screen and (max-width: 600px) {
+    
     main {
-        padding-left: 35px;
+        position: relative;
+        padding: 0;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
     }
 
+    main  h2 {
+
+        font-size: 20px;
+    }
+
+    main  p, li {
+        font-size: 14px;
+    }
     table {
         font-size: 12px;
     }
@@ -232,8 +244,12 @@ th:hover {
 }
 
 @media screen and (max-width: 410px) {
+    main  h2 {
+
+        font-size: 16px;
+        padding: 0px 10px;
+    }
     table {
-        table-layout: fixed;
         font-size: 10px;
     }
 }

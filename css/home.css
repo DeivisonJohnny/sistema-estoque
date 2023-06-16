@@ -19,8 +19,8 @@ a {
 
 body {
     width: 100vw;
-    height: 100%;
-    background-color: #1e1e1e;
+    min-height: 100%;
+    background-color: #414141;
 }
 
 header {
@@ -34,7 +34,6 @@ header {
     font-size: 14px;
     position: absolute;
     right: 0px;
-    z-index: 2;
 }
 
 header img {
@@ -44,7 +43,14 @@ header img {
     border: 2px solid #EC8D19;
 }
 
-header > div {
+header>div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+}
+
+header>#icon-user {
     display: flex;
     align-items: center;
     border: 1px solid #EC8D19;
@@ -54,10 +60,85 @@ header > div {
     cursor: pointer;
 }
 
-header > div:hover {
+header>i {
+    font-size: 23px;
+    padding: 5px;
+    display: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.bi-list:hover {
+    background-color: gray;
+
+}
+
+header>div:hover {
     transition: 0.5s;
     background-color: #EC8D19;
     color: black;
+}
+
+.menu {
+    display: none;
+}
+
+.menu-resp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.953);
+    width: 100vw;
+    height: 100%;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 110%;
+    z-index: 1;
+    animation-name: openMenu;
+    animation-duration: 0.4s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes openMenu {
+    0% {
+        left: 110%;
+    }
+
+    100% {
+        left: 0;
+    }
+}
+
+@keyframes closeMenu {
+    0% {
+        left: 0;
+    }
+
+    100% {
+        left: -110%;
+    }
+}
+
+.menu-resp > ul  {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menu-resp  > ul > li a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #EC8D19;
+    transition: 0.4s;
+}
+
+.menu-resp  > ul > li a:hover {
+    color: #ffd6a3;
 }
 
 menu {
@@ -74,11 +155,12 @@ menu {
     top: 0px;
     left: 0px;
 }
-menu > div > h1 {
+
+menu>div>h1 {
     font-size: 20px;
 }
 
-menu > div > ul {
+menu>div>ul {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -86,11 +168,11 @@ menu > div > ul {
     list-style: none;
 }
 
-menu > div > ul > li > a {
+menu>div>ul>li>a {
     color: black;
 }
 
-menu > div > ul > li > a > i {
+menu>div>ul>li>a>i {
     font-size: 20px;
     cursor: pointer;
     transition: 0.5s;
@@ -122,6 +204,48 @@ menu > div > ul > li > a > i {
     align-items: center;
     justify-content: center;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
+    z-index: 0;
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    header {
+        justify-content: space-evenly;
+        width: 100%;
+        position: relative;
+        padding: 5px 10px;
+        gap: 55%;
+        z-index: 1;
+    }
+
+    header > #icon-user > p {
+        font-size: 12px;
+    }
+
+    header > h2 {
+        display: none;
+    }
+
+    menu {
+        display: none;
+    }
+
+    .bi-list {
+        display: flex;
+        font-weight: bolder;
+        cursor: pointer;
+    }
+
+    #main {
+        padding: 0;
+        width: 100%;
+        content: '';
+        position: relative;
+    }
 
 }

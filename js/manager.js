@@ -1,18 +1,20 @@
 const newCate = document.querySelectorAll('.cate')
 const form = document.querySelectorAll('form')[0]
-const select = document.querySelector('#categoria')
-
-var option = select.option
-console.log(option);
 
 form.addEventListener('submit', (event) => {
-    if (select.value) {
-        
+    var selectedIndex = select.selectedIndex
+
+    var selectedOption = select.options[selectedIndex].value
+    if (selectedOption == '') {
+        event.preventDefault()
+        alert('Por favor selecione uma categoria')
+        select.style.borderColor = 'red'
+        select.style.boxShadow = '0px 0px 10px -2px red'
     } else {
-        
+        select.style.borderColor = 'auto'
+        select.style.boxShadow = 'none'
     }
 })
-
 
 function newCategoria() {
     if (newCate[0].className != 'newCate') {
@@ -37,6 +39,17 @@ function exitMenu() {
 
 const inputs = document.querySelectorAll('.inputs')
 const spans = document.querySelectorAll('span')
+const select = document.getElementById('categoria')
+
+select.addEventListener('click', () => {
+    if (select.value == '') {
+        select.style.borderColor = 'red'
+        select.style.boxShadow = '0px 0px 10px -2px red' 
+    } else {
+        select.style.borderColor = 'gray'
+        select.style.boxShadow = 'none'
+    }
+})
 
 function setError(error) {
     inputs[error].style.borderColor = 'red'
@@ -59,7 +72,7 @@ function validInp(index) {
             spans[index].innerHTML = '* Deve ter ao menos 3 caracteres'
         } else {
             removeError(index)
-            
+
         }
     }
 

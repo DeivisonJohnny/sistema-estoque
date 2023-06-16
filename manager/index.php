@@ -29,8 +29,9 @@
                 <div id="box-select">
                     <label class="label-required" for="categoria">Categoria</label>
                     <div>
-                        <select name="categoria" id="categoria">
+                        <select name="categoria" id="categoria" >
                             <option value="">Selecione uma categoria</option>
+                            <option value="Whiskey">Whiskey</option>
                             <?php 
                                 include_once("../connection/estoque.php");
 
