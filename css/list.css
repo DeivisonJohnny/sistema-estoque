@@ -1,0 +1,154 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#box-search {
+    display: flex;
+    padding: 5px;
+    flex-direction: column;
+    width: 100%;
+}
+
+#box-search > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 65%;
+    height: max-content;
+    margin: auto;
+    height: 25px;
+}
+
+
+#isearch {
+    width: 90%;
+    height: 100%;
+    border-radius: 5px 0px 0px 5px;
+    border: none;
+    padding: 0px 0px 0px 10px;
+    outline: none;
+    font-size: 10px;
+    box-shadow: 0px 0px 5px -2px rgba(0, 0, 0, 0.415);
+}
+
+#isearch:focus {
+    outline: 1px solid #FA961B;
+    box-shadow: 0px 0px 5px -2px #FA961B;
+}
+
+#isearch::placeholder {
+    padding-left: 2px;
+}
+
+#box-search > div > button {
+    height: 100%;
+    background-color: cadetblue;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0px 5px 5px 0px;
+    cursor: pointer;
+    transition: 0.4s;
+    background-color: black;
+}
+
+#box-search > div > button:hover {
+    background-color: #FA961B;
+    color: black;
+}
+
+
+.bi-search:hover {
+    color: black;
+}
+
+.bi-search {
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+    color: #FA961B;
+    padding: 0px 10px;
+    border-radius: 0px 5px 5px 0px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+main {
+    background-color: rgb(195, 195, 195);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+table {
+    border-collapse: collapse;
+    /* border: 2px solid rgb(66, 66, 66); */
+    width: 100%;
+}
+
+table > thead {
+    background-color: lightblue;
+    border-radius: 10px;
+    width: 90%;
+}
+
+th {
+    text-align: center;
+    font-size: 13px;
+    padding: 5px 5px;
+    color: #FA961B;
+    background-color: black;
+}
+
+td {
+    text-align: center;
+    padding: 2px 5px;
+    border-left: 1px solid #FA961B;
+    border-right: 1px solid #FA961B;
+    border-bottom: 1px solid #FA961B;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.pincel:hover, .trash:hover {
+    background-color: black;
+    color: #FA961B;
+    transition: 0.4s;
+}
+
+.pincel {
+    background-color: #FA961B;
+    height: 100%;
+    border-right: 1px solid black;
+    cursor: pointer;
+
+}
+
+.trash {
+    background-color: #FA961B;
+    cursor: pointer;
+}
+
+
+@media screen and (min-width: 800px) {
+    main {
+        background-color: black;
+        width: 95%;
+    }
+}

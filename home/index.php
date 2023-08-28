@@ -39,7 +39,7 @@
             <ul>
 
                 <li><a href="./index.php?page=home"><i class="bi bi-house-door" title="Inicio"></i></a></li>
-                <li><a href=""><i class="bi bi-card-list" title="Listar, atualizar, deletar estoque"></i></a></li>
+                <li><a href="./index.php?page=lista"><i class="bi bi-card-list" title="Listar, atualizar, deletar estoque"></i></a></li>
                 <li><a href="./index.php?page=novo-estoque"><i class="bi bi-plus-circle" title="Adicionar estoque"></i></a></li>
             </ul>
         </div>
@@ -65,6 +65,9 @@
                 break;
             case 'novo-estoque';
                 require_once('../manager/index.php');
+                break;
+            case 'lista':
+                include_once('../list/index.html');
                 break;
 
             default:
