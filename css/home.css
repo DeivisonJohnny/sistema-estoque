@@ -196,15 +196,10 @@ menu>div>ul>li>a>i {
 
 #main {
     position: absolute;
-    padding-left: 40px;
-    padding-top: 46px;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 100%;
+    top: 46.6px;
+    left: 40px;
+    height: calc(100vh - 46.6px);
+    width: calc(100vw - 40px);
     z-index: 0;
 }
 
@@ -217,7 +212,7 @@ menu>div>ul>li>a>i {
     header {
         justify-content: space-evenly;
         width: 100%;
-        position: relative;
+        position: sticky;
         padding: 5px 10px;
         gap: 55%;
         z-index: 1;
@@ -244,8 +239,11 @@ menu>div>ul>li>a>i {
     #main {
         padding: 0;
         width: 100%;
+        height:calc(100% - 46.6px);
         content: '';
         position: relative;
+        top: 0;
+        left: 0;
     }
 
 }

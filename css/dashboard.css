@@ -2,10 +2,7 @@ main {
     position: absolute;
     top: 0px;
     left: 0px;
-    padding-top: 47px;
-    padding-left: 44px;
-
-    width: 100vw;
+    width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -224,6 +221,8 @@ th:hover {
     
     main {
         position: relative;
+        width: 100%;
+        max-height: max-content;
         padding: 0;
         flex-wrap: nowrap;
         justify-content: flex-start;

@@ -25,7 +25,7 @@
     <div class="menu">
         <ul>
             <li><a href="./index.php?page=home">Home</a></li>
-            <li><a href="">Lista</a></li>
+            <li><a href="./index.php?page=lista">Lista</a></li>
             <li><a href="./index.php?page=novo-estoque">Painel</a></li>
             <li><a href="">Configuração</a></li>
         </ul>
@@ -67,9 +67,30 @@
                 require_once('../manager/index.php');
                 break;
             case 'lista':
-                include_once('../list/index.html');
+                require_once('../list/index.php');
                 break;
-
+            
+            case 'editar':
+                require_once('../list/editar.php');
+                break;
+            case 'deletar':
+                if (!empty($_GET['id'])) {
+                    require_once('../connection/estoque.php');
+                    $idProd = $_GET['id'];
+                    $sqlDelet = "DELETE FROM estoque WHERE id = $idProd";
+                    if(mysqli_query($connetion_stock, $sqlDelet)) {
+                        echo "<script>alert('Cadastro deletado com sucesso') </script>";
+                        echo "<script>window.location.href = '../home/index.php?page=lista'</script>";
+                    } else {
+                        echo "<script>alert('Erro ao deletar cadastro de ID $idProd')</script>";
+                    }
+                    
+                    
+                } else {
+                    echo "Algo deu errado";
+                }
+                
+                break;
             default:
                 require_once('../home/dashboard.php');
         }
