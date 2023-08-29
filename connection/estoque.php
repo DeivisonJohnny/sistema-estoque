@@ -1,9 +1,9 @@
 <?php 
 
     define("HOST", "localhost");
-    define("USER", "root");
-    define("PASS", "");
-    define("DBNAME", "estoque_budega");
+    define("USER", "id21198842_budega");
+    define("PASS", "93186145De@");
+    define("DBNAME", "id21198842_budega_estoque");
 
     $connetion_stock = new mysqli(HOST, USER, PASS, DBNAME);
 

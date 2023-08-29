@@ -79,7 +79,11 @@ include_once('../connection/estoque.php');
                     echo "</td>";
 
                     echo "<td class='pincel' name='editeId' value='" . $lineSql['id'] . "'>
-                        <button href='../home/index.php?page=editar&id=" . $lineSql['id'] . "'><i  class='bi bi-pencil-square'></i></button>";
+                        <button onclick=\"window.location.href='../home/index.php?page=editar&id=".$lineSql['id']."'\">
+                        
+                        <i  class='bi bi-pencil-square'></i>
+                        
+                        </button>";
                     echo "</td>";
 
                     echo "<td class='trash'>

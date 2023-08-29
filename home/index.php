@@ -69,10 +69,7 @@
             case 'lista':
                 require_once('../list/index.php');
                 break;
-            
-            case 'editar':
-                require_once('../list/editar.php');
-                break;
+
             case 'deletar':
                 if (!empty($_GET['id'])) {
                     require_once('../connection/estoque.php');
@@ -91,6 +88,12 @@
                 }
                 
                 break;
+
+                case 'editar':
+                    require_once('../list/update.php');
+                    
+
+                    break;
             default:
                 require_once('../home/dashboard.php');
         }
