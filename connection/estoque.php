@@ -1,11 +1,11 @@
 <?php 
 
-    define("HOST", "localhost");
-    define("USER", "id21198842_budega");
-    define("PASS", "93186145De@");
-    define("DBNAME", "id21198842_budega_estoque");
+    define("HOST_ST", "localhost");
+    define("USER_ST", "root");
+    define("PASS_ST", "");
+    define("DBNAME_ST", "estoque_budega");
 
-    $connetion_stock = new mysqli(HOST, USER, PASS, DBNAME);
+    $connetion_stock = new mysqli(HOST_ST, USER_ST, PASS_ST, DBNAME_ST);
 
     // if ($connetion_stock -> connect_errno) {
     //     echo "Erro de conexão";

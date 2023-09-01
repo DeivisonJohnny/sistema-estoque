@@ -1,39 +1,58 @@
 <?php
 session_start();
-include_once("../connection/adm.php");
 
+if (!empty($_POST['usuario']) OR !empty($_POST['senha'])) {
+    include_once("../connection/adm.php");
 
-// print_r("Ação ->".$_POST["acao"]."<br>");
-// print_r("usuario ->".$_POST["usuario"]."<br>");
-// print_r("senha ->".$_POST["senha"]);
+    $usuario = $_POST['usuario'];
+    $senha = $_POST['senha'];
 
-switch ($_POST["acesso"]) {
-    case "logar":
-        if (!empty($_POST['usuario']) and !empty($_POST['senha'])) {
-            $usuario = $_POST['usuario'];
-            $senha = $_POST['senha'];
+    $query = $conn -> query("SELECT * FROM administradores WHERE usuario = '$usuario' AND senha = '$senha'");
 
-            $sql = mysqli_query($conn, "SELECT * FROM administradores WHERE usuario = '$usuario' AND senha = '$senha'");
-
-            if (mysqli_num_rows($sql) > 0) {
-                $_SESSION['usuario'] = $usuario;
-                echo "<script>window.location.href = '../home/'</script>";
-
-                echo "Olá " . $_SESSION['usuario'];
-            } else {
-                echo "<script>window.location.href = '../login/login.html'</script>";
-            }
-        } else {
-            echo "<script>window.location.href = '../login/login.html'</script>";
-        }
-        break;
-
-    case "verificar":
-
-        break;
-    default:
+    if($query->num_rows > 0){
+        acesso();
+        echo "Consedido"; 
+    } else {
         echo "<script>window.location.href = '../login/login.html'</script>";
-        break;
+
+        echo "Não existe cadastro"; 
+
+
+    }
+
+    
+} else {
+    if (isset($_SESSION['token']) and $_SESSION['token'] == $token) {
+        echo "Vai continuar acessando";
+    } else {
+        echo "Bloqueiado";
+    }
+    
+    echo "<script>window.location.href = '../login/login.html'</script>";
+    echo "Dados não passados"; 
+
 }
 
+
+function acesso()
+{
+    $token = bin2hex(random_bytes(16));
+
+    $_SESSION['token'] = $token;
+
+    header("Location: ../home/index.php?token=$token");
+}
+
+
+// <?php
+// session_start();
+
+// // Gere um token único para o usuário
+// $token = bin2hex(random_bytes(16));
+
+// // Armazene o token na sessão
+// $_SESSION['token'] = $token;
+// 
 ?>
+<!-- 
+// <a href="pagina2.php?token=<?php echo $token; ?>">Ir para a Página 2</a> -->

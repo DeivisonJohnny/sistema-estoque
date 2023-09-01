@@ -1,3 +1,30 @@
+<?php 
+session_start();
+    function validUser() {
+
+
+        if (isset($_GET['token'])) {
+            $token = $_GET['token'];
+
+            if (!isset($_SESSION['token']) OR $_SESSION['token'] !== $token) {
+                
+                echo "<script>alert('Você não tem permissão para acessar esta pagina')</script>";
+                echo "<script>window.location.href = '../login/login.html'</script>";
+
+            }
+            
+        } else {
+            echo "<script>alert('Você não tem permissão para acessar esta pagina')</script>";
+            echo "<script>window.location.href = '../login/login.html'</script>";
+
+
+        }
+        
+    }
+
+    validUser();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 

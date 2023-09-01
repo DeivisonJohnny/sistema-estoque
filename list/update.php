@@ -22,7 +22,6 @@
             $QTD_unidades = $lineCollect['QTD_unidades'];
             $Valor_BT_UN = $lineCollect['Valor_BT_UN'];
             $Valor_FN_UN = $lineCollect['Valor_FN_UN'];
-            print_r($lineCollect);
         }
     } else {
 

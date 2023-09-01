@@ -1,5 +1,20 @@
 <?php
 include_once('../connection/estoque.php');
+
+
+
+    if (!empty($_GET['search'])) {
+        $dataSearch = $_GET['search'];
+        $sql = "SELECT * FROM estoque WHERE id LIKE '%$dataSearch%' OR Marca LIKE '%$dataSearch%' OR Categoria LIKE '%$dataSearch%' ORDER BY id DESC";
+
+        # code...
+    } else {
+        # code...
+        $sql = "SELECT * FROM estoque ORDER BY id DESC";
+    }
+
+    $result = $connetion_stock->query($sql);
+    
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +34,7 @@ include_once('../connection/estoque.php');
             <div>
 
                 <input type="search" name="" id="isearch" placeholder="Pesquisar">
-                <button>
+                <button id="iBtnSearch">
                     <i class="bi bi-search"></i>
                 </button>
             </div>
@@ -39,60 +54,49 @@ include_once('../connection/estoque.php');
                 </tr>
             </thead>
             <tbody>
-                <!-- <tr>
-                    <td>23</td>
-                    <td>Skol</td>
-                    <td>Cerveja</td>
-                    <td>1 L</td>
-                    <td>200</td>
-                    <td>R$ 4.5</td>
-                    <td>R$ 7.00</td>
-                    <td class="pincel"><i class="bi bi-pencil-square"></i></td>
-                    <td class="trash"><i class="bi bi-trash3"></i></td>
-                </tr> -->
                 <?php
-
-                $sql = mysqli_query($connetion_stock, "SELECT * FROM estoque");
-
-                while ($lineSql = mysqli_fetch_assoc($sql)) {
-                    echo "<tr>";
-                    echo "<td>";
-                    echo $lineSql['id'];
-                    echo "</td>";
-                    echo "<td>";
-                    echo $lineSql['Marca'];
-                    echo "</td>";
-                    echo "<td>";
-                    echo $lineSql['Categoria'];
-                    echo "</td>";
-                    echo "<td>";
-                    echo $lineSql['Descricao'];
-                    echo "</td>";
-                    echo "<td>";
-                    echo $lineSql['QTD_unidades'];
-                    echo "</td>";
-                    echo "<td> R$ ";
-                    echo $lineSql['Valor_BT_UN'];
-                    echo "</td>";
-                    echo "<td> R$ ";
-                    echo $lineSql['Valor_FN_UN'];
-                    echo "</td>";
-
-                    echo "<td class='pincel' name='editeId' value='" . $lineSql['id'] . "'>
-                        <button onclick=\"window.location.href='../home/index.php?page=editar&id=".$lineSql['id']."'\">
-                        
-                        <i  class='bi bi-pencil-square'></i>
-                        
-                        </button>";
-                    echo "</td>";
-
-                    echo "<td class='trash'>
-    <button onclick=\"if(confirm('Realmente deseja deletar o cadastro de " . $lineSql['Marca'] . " ')){window.location.href='../home/index.php?page=deletar&id=" . $lineSql['id'] . "';}\"><i class='bi bi-trash3'></i></button>";
-                    echo "</td>";
-
-
-
-                    echo "</tr>";
+                $line = mysqli_query($connetion_stock, $sql);
+                if(mysqli_num_rows($line) > 0) {
+                    while ($lineSql = mysqli_fetch_assoc($line)) {
+                        echo "<tr>";
+                        echo "<td>";
+                        echo $lineSql['id'];
+                        echo "</td>";
+                        echo "<td>";
+                        echo $lineSql['Marca'];
+                        echo "</td>";
+                        echo "<td>";
+                        echo $lineSql['Categoria'];
+                        echo "</td>";
+                        echo "<td>";
+                        echo $lineSql['Descricao'];
+                        echo "</td>";
+                        echo "<td>";
+                        echo $lineSql['QTD_unidades'];
+                        echo "</td>";
+                        echo "<td> R$ ";
+                        echo $lineSql['Valor_BT_UN'];
+                        echo "</td>";
+                        echo "<td> R$ ";
+                        echo $lineSql['Valor_FN_UN'];
+                        echo "</td>";
+    
+                        echo "<td class='pincel' name='editeId' value='" . $lineSql['id'] . "'>
+                            <button onclick=\"window.location.href='../home/index.php?page=editar&id=".$lineSql['id']."'\">
+                            
+                            <i  class='bi bi-pencil-square'></i>
+                            
+                            </button>";
+                        echo "</td>";
+    
+                        echo "<td class='trash'>
+        <button onclick=\"if(confirm('Realmente deseja deletar o cadastro de " . $lineSql['Marca'] . " ')){window.location.href='../home/index.php?page=deletar&id=" . $lineSql['id'] . "';}\"><i class='bi bi-trash3'></i></button>";
+                        echo "</td>";
+    
+    
+    
+                        echo "</tr>";
+                    }
                 }
 
                 ?>
@@ -101,5 +105,22 @@ include_once('../connection/estoque.php');
         </table>
     </main>
 </body>
+
+<script>
+    const iBtnSearch = document.querySelector('#iBtnSearch')
+    const search = document.querySelector('#isearch')
+
+    search.addEventListener('keydown', function(event) {
+        if(event.key === 'Enter') {
+            searchClick()
+        }
+    })
+
+    function searchClick() {
+        window.location = 'index.php?page=lista&search='+search.value
+    }
+
+    iBtnSearch.addEventListener('click', searchClick)
+</script>
 
 </html>

@@ -1,14 +1,35 @@
 const elementAnimation = document.querySelector('#elementAnimation')
 
-window.onload = function() {
+
+
+// animação background
+
+function animationBg() {
+    const body = document.querySelector('body')
+    let i = 0
+
+    setInterval(() => {
+        i += 1
+        body.style.backgroundImage = 'linear-gradient(' + i + 'deg, #EC8D19, #1a0900 80%)'
+        if (i >= 360) {
+            i = 0
+        }
+        console.log(i)
+    }, 15)
+}
+
+// animação da logo
+
+window.onload = function () {
     setTimeout(() => {
         elementAnimation.style.animationName = 'apresentaLogin'
         setTimeout(() => {
             elementAnimation.style.left = 'auto'
-        },800)
+        }, 800)
     }, 1000)
-}
+    animationBg()
 
+}
 // Aqui vai começar á válidar os campos á ser preenchido
 
 const form = document.querySelector('form')
@@ -18,7 +39,7 @@ form.addEventListener('submit', (event) => {
         event.preventDefault()
         validUsu()
         validPass()
-    } 
+    }
 })
 
 const inputs = document.querySelectorAll('input')

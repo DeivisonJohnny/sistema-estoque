@@ -1,8 +1,8 @@
 <?php 
     define("HOST", 'localhost');
-    define("USER", 'id21198842_adm_budega');
-    define("PASS", '93186145De@');
-    define("DBNAME", 'id21198842_adm_budega');
+    define("USER", 'root');
+    define("PASS", '');
+    define("DBNAME", 'budega_adm');
 
     $conn = new mysqli(HOST,USER,PASS,DBNAME);
 
