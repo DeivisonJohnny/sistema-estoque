@@ -43,4 +43,16 @@ function acesso()
     header("Location: ../home/index.php?token=$token");
 }
 
+
+// <?php
+// session_start();
+
+// // Gere um token único para o usuário
+// $token = bin2hex(random_bytes(16));
+
+// // Armazene o token na sessão
+// $_SESSION['token'] = $token;
+// 
 ?>
+<!-- 
+// <a href="pagina2.php?token=<?php echo $token; ?>">Ir para a Página 2</a> -->

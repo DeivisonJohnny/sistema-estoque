@@ -82,7 +82,7 @@ include_once('../connection/estoque.php');
                         echo "</td>";
     
                         echo "<td class='pincel' name='editeId' value='" . $lineSql['id'] . "'>
-                            <button onclick=\"window.location.href='../home/index.php?page=editar&id=".$lineSql['id']."'\">
+                            <button onclick=\"window.location.href='../home/index.php?page=editar&id=".$lineSql['id']."&token=".$_SESSION['token']."'\">
                             
                             <i  class='bi bi-pencil-square'></i>
                             
@@ -90,7 +90,7 @@ include_once('../connection/estoque.php');
                         echo "</td>";
     
                         echo "<td class='trash'>
-        <button onclick=\"if(confirm('Realmente deseja deletar o cadastro de " . $lineSql['Marca'] . " ')){window.location.href='../home/index.php?page=deletar&id=" . $lineSql['id'] . "';}\"><i class='bi bi-trash3'></i></button>";
+        <button onclick=\"if(confirm('Realmente deseja deletar o cadastro de " . $lineSql['Marca'] . " ')){window.location.href='../home/index.php?page=deletar&id=" . $lineSql['id'] ."&token=".$_SESSION['token']."';}\"><i class='bi bi-trash3'></i></button>";
                         echo "</td>";
     
     
@@ -117,7 +117,7 @@ include_once('../connection/estoque.php');
     })
 
     function searchClick() {
-        window.location = 'index.php?page=lista&search='+search.value
+        window.location = 'index.php?page=lista&search='+search.value+'&token=<?php echo $_SESSION['token']?>'
     }
 
     iBtnSearch.addEventListener('click', searchClick)

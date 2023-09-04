@@ -2,9 +2,8 @@
 session_start();
     function validUser() {
 
-
-        if (isset($_GET['token'])) {
-            $token = $_GET['token'];
+        if (isset($_REQUEST['token'])) {
+            $token = $_REQUEST['token'];
 
             if (!isset($_SESSION['token']) OR $_SESSION['token'] !== $token) {
                 
@@ -12,14 +11,13 @@ session_start();
                 echo "<script>window.location.href = '../login/login.html'</script>";
 
             }
+
+            $_SESSION['token'] = $_GET['token'];
             
         } else {
-            echo "<script>alert('Você não tem permissão para acessar esta pagina')</script>";
-            echo "<script>window.location.href = '../login/login.html'</script>";
-
-
+                echo "<script>alert('Você não tem permissão para acessar esta pagina')</script>";
+                echo "<script>window.location.href = '../login/login.html'</script>";
         }
-        
     }
 
     validUser();
@@ -51,9 +49,9 @@ session_start();
 
     <div class="menu">
         <ul>
-            <li><a href="./index.php?page=home">Home</a></li>
-            <li><a href="./index.php?page=lista">Lista</a></li>
-            <li><a href="./index.php?page=novo-estoque">Painel</a></li>
+            <li><a href="./index.php?page=home&token=<?php echo $_SESSION['token']?>">Home</a></li>
+            <li><a href="./index.php?page=lista&token=<?php echo $_SESSION['token']?>">Lista</a></li>
+            <li><a href="./index.php?page=novo-estoque&token=<?php echo $_SESSION['token']?>">Painel</a></li>
             <li><a href="">Configuração</a></li>
         </ul>
     </div>
@@ -64,10 +62,9 @@ session_start();
         </div>
         <div>
             <ul>
-
-                <li><a href="./index.php?page=home"><i class="bi bi-house-door" title="Inicio"></i></a></li>
-                <li><a href="./index.php?page=lista"><i class="bi bi-card-list" title="Listar, atualizar, deletar estoque"></i></a></li>
-                <li><a href="./index.php?page=novo-estoque"><i class="bi bi-plus-circle" title="Adicionar estoque"></i></a></li>
+                <li><a href="./index.php?page=home&token=<?php echo $_SESSION['token']?>"><i class="bi bi-house-door" title="Inicio"></i></a></li>
+                <li><a href="./index.php?page=lista&token=<?php echo $_SESSION['token']?>"><i class="bi bi-card-list" title="Listar, atualizar, deletar estoque"></i></a></li>
+                <li><a href="./index.php?page=novo-estoque&token=<?php echo $_SESSION['token']?>"><i class="bi bi-plus-circle" title="Adicionar estoque"></i></a></li>
             </ul>
         </div>
         <div>
@@ -104,7 +101,7 @@ session_start();
                     $sqlDelet = "DELETE FROM estoque WHERE id = $idProd";
                     if(mysqli_query($connetion_stock, $sqlDelet)) {
                         echo "<script>alert('Cadastro deletado com sucesso') </script>";
-                        echo "<script>window.location.href = '../home/index.php?page=lista'</script>";
+                        echo "<script>window.location.href = '../home/index.php?page=lista&token=".$_SESSION['token']."'</script>";
                     } else {
                         echo "<script>alert('Erro ao deletar cadastro de ID $idProd')</script>";
                     }

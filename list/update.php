@@ -35,8 +35,8 @@
                 <li id="green"></li>
             </ul>
         </div>
-        <form action="../auth/auth-estoque.php?id=<?php echo$idCollect;?>" method="post" id="formMain">
-            <h1>Adicionar produto ao estoque</h1>
+        <form action="../auth/auth-estoque.php?id=<?php echo$idCollect.'&token='.$_SESSION['token'];?>" method="post" id="formMain">
+            <h1>Atualize os dados</h1>
             <input type="hidden" name="acao" value="update">
             <section>
                 <div>
@@ -49,7 +49,6 @@
                     <div>
                         <select name="categoria" id="categoria" >
                             <option value="">Selecione uma categoria</option>
-                            <option value="Whiskey">Whiskey</option>
                             <?php 
                                 include_once("../connection/estoque.php");
 
@@ -106,7 +105,7 @@
 
         </div>
         <div class="cate" >
-            <form id="form-cate" action="../auth/auth-estoque.php" method="post">
+            <form id="form-cate" action="../auth/auth-estoque.php?token=<?php echo $_REQUEST['token']?>" method="post">
                 <i class="bi bi-x" onclick="exitMenu()"></i>
                 <input type="hidden" name="acao" value="new-category">
                 <h2>Nova categoria</h2>
